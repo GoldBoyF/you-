@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/logo.png">
+    <title>优优家教老师入驻</title>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap-select.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/info.css">
+</head>
+
+<body class="my-body">
+    <nav class="navbar my-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand my-navbar-brand" href="index.html" target="_blank"><img src="img/logo_white.png"></a>
+                <p class="navbar-brand teacher-version" >优优家教老师入驻</p>
+            </div>
+        </div>
+    </nav>
+    <div class="banner">
+        <ul class="banner-info">
+              <img class="my-qcode-nav" src="img/qcode_teacher.png">
+            <li class="my-font-small text-scan">扫一扫，下载教师端</li>
+        </ul>
+    </div>
+	<br>
+    <div class="container main">
+		<div id="page1">
+			<form id="signupForm" method="post" action="http://139.196.29.70/test/teacher/addProfileDetailInformation.php">
+			<div id="step1" class="main-form">
+				<div class="form-group">
+					<label for="name" class="form-lable">姓名</label>
+					<input type="text" class="form-control input-text" id="name" name="name">
+				</div>
+				<div class="form-group">
+					<label for="sex" class="form-lable">性别</label>
+					<label class="radio-inline">
+						<input type="radio" name="sex" value="0" checked><span>男</span></label>
+					<label class="radio-inline">
+						<input type="radio" name="sex" value="1"><span>女</span></label>
+				</div>
+				<div class="form-group my-abc">
+					<label for="email" class="form-lable">密码</label>
+					<input type="password" class="form-control input-text" id="password" name="password">
+				</div>
+				<div class="form-group my-abc">
+					<label for="email" class="form-lable">确认密码</label>
+					<input type="password" class="form-control input-text" name="repassword">
+				</div>
+				<div class="form-group">
+					<label for="phone" class="form-lable">手机号码</label>
+					<input type="text" class="form-control input-text" id="phone" name="phone">
+				</div>
+				
+				<div class="form-group">
+					<label for="verifycode" class="form-lable form-verify">验证码</label>
+					<div class="input-group input-text">
+						<input type="text" class="form-control" id="verifycode" name="verifyCode">
+						<span class="input-group-btn">
+						  <button class="btn btn-primary" type="button" id="btn-getcode">
+							 获取验证码
+						  </button>
+						</span>
+					</div>
+					<label  id="verifycodeLabel" class="error" style="display:none;padding-left:160px" ></label>
+				</div>
+				
+				<div class="form-group">
+					<label for="identity" class="form-lable">身份</label>
+					<select class="selectpicker" data-width="350px" name="status" id="status">
+						
+						<option value="在校大学生">在校大学生</option>
+						<!--<option value="全职教师">全职教师</option>-->
+					</select>
+				</div>
+				
+			</div>
+			<div id="step2-type1" class="main-form">
+				<div class="form-group full-time">
+					<label for="school-type" class="form-lable">学校类别</label>
+					<select class="selectpicker" data-width="350px" name="schoolType" title="请选择">
+						<option value="市级重点中学">市级重点中学</option>
+						<option value="区级重点中学">区级重点中学</option>
+						<option value="高中">高中</option>
+						<option value="重点初中">重点初中</option>
+						<option value="初中">初中</option>
+						<option value="小学">小学</option>
+						<option value="培训机构">培训机构</option>
+					</select>
+					<label  class="error" style="display:none">请选择</label>
+				</div>
+				<div class="form-group full-time">
+					<label for="school-name" class="form-lable">学校名称</label>
+					<input type="text" class="form-control input-text" name="schoolName">
+				</div>
+				<div class="form-group full-time">
+					<label for="teacher-title" class="form-lable">职称</label>
+					<select class="selectpicker" data-width="350px" id="teacher-title" title="请选择" name="professional">
+						<option value="特级教师">特级教师</option>
+						<option value="高级教师">高级教师</option>
+						<option value="普通教师">教师</option>
+						
+						
+					</select>
+					<label  class="error" style="display:none">请选择</label>
+				</div>
+				<div class="form-group">
+					<label for="teach-age" class="form-lable">教龄</label>
+					<select class="selectpicker" data-width="350px" id="teach-age" name="teachingAge" title="请选择">
+						<option value="1年">1年</option>
+						<option value="2年">2年</option>
+						<option value="3年">3年</option>
+						<option value="5年">5年</option>
+						<option value="10年">10年</option>
+						<option value="20年">20年</option>
+						<option value="30年">30年</option>
+					</select>
+					<label  class="error" style="display:none">请选择</label>
+				</div>
+				<div class="form-group">
+					<label id="highest-education" class="form-lable">最高学历</label>
+					<select class="selectpicker" data-width="350px" id="highest-education" title="请选择" name="mostBachelor">
+						<option value="博士">博士</option>
+						<option value="硕士">硕士</option>
+						<option value="本科">本科</option>
+						<option value="专科">专科</option>
+					</select>
+					<label  class="error" style="display:none">请选择</label>
+				</div>
+				<div class="form-group">
+					<label id="graduate-school" class="form-lable">毕业院校</label>
+					<input type="text" class="form-control input-text" name="degreeSchoolName">
+				</div>
+				<div class="form-group">
+					<label for="graduate-major" class="form-lable">专业</label>
+					<input type="text" class="form-control input-text" name="major">
+				</div>
+
+
+				<div class="form-group">
+					<label for="licence" class="form-lable"></label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="licence" checked><span>我已阅读并同意<a href="readme.htm" target="_blank">《优优家教老师版》用户协议</a></span></label>
+				</div>
+				<input type="submit" class="btn btn-lg btn-primary btn-next" value="完成注册" id="step2-submit">
+				<label  class="error submitError" style="display:none"></label>
+			 </div>
+			</form>
+		</div>
+		<div id="page2" class="main-form" style="display:none">
+            <p class="step3-text-short my-font-large">恭喜您成功注册为优优家教教师，现在
+                <br>
+            </p>
+            <div class="img-download">
+                <a href="index.html#myDownload" target="_blank"><img id="myIphone" src="img/iphone-download.png"></a>
+                <a href="index.html#myDownload" target="_blank"><img id="myAndroid" src="img/android-download.png"></a>
+                <img src="img/qcode.png">
+            </div>
+            <p class="my-font-normal my-text-blue">扫描二维码，下载APP</p>
+            <p class="step3-text-long my-font-normal">
+                <span class="my-text-blue">您可以通过注册的手机号和密码登陆优优家教老师端APP</span><br/>
+                为了教学安全，您需要身份验证以获得家教聘请<br/>
+                优优家教会妥善安全的保管个人信息，维护个人隐私权利
+            </p>
+        </div>
+	</div>
+
+
+    <footer class="footer">
+        <p>上海优优教育科技有限公司版权所有</p>
+        <p>Copyright @ 2015 UUStudy Education & Technology. All Rights Reserved.</p>
+    </footer>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="lib/jquery/jquery.form.js"></script>
+    <script src="lib/jquery/jquery.validate.js"></script>
+    <script src="js/info.js"></script>
+</body>
+
+</html>
